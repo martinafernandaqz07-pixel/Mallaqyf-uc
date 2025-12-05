@@ -2,173 +2,105 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Malla Académica - Farmacia</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background: #f4f6f9;
-        margin: 0;
-        padding: 20px;
-    }
-    h1 {
-        text-align: center;
-        color: #083d77;
-    }
-    .semestre {
-        background: white;
-        padding: 20px;
-        margin: 20px auto;
-        border-radius: 10px;
-        max-width: 900px;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    h2 {
-        color: #085dad;
-        margin-top: 0;
-    }
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 10px;
-    }
-    th {
-        background: #085dad;
-        color: white;
-        padding: 10px;
-        text-align: left;
-    }
-    td {
-        border: 1px solid #ddd;
-        padding: 8px;
-        background: white;
-    }
-    tr:nth-child(even) td {
-        background: #f0f4ff;
-    }
-    .prereq {
-        color: #444;
-        font-size: 0.9em;
-    }
-</style>
+<title>Malla Académica Interactiva - Química y Farmacia</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
+<h1>Malla Académica Interactiva – Química y Farmacia</h1>
 
-<h1>Malla Académica – Química y Farmacia</h1>
+<div id="malla">
 
-<!-- 1 Semestre -->
-<div class="semestre">
-<h2>1° Semestre</h2>
-<table>
-<tr><th>Asignatura</th><th>Código</th><th>Prerrequisitos</th></tr>
-<tr><td>General 1</td><td>QIM100</td><td>—</td></tr>
-<tr><td>Precalculo</td><td>MAT1000</td><td>—</td></tr>
-<tr><td>Mundo medicamentos</td><td>QIF117</td><td>—</td></tr>
-<tr><td>Introducción a las Ciencias Farmacéuticas</td><td>QIF100B</td><td>—</td></tr>
-<tr><td>Laboratorio Química General</td><td>QIM101L</td><td>—</td></tr>
-</table>
+  <!-- 1° Semestre -->
+  <div class="semestre" id="semestre-1">
+    <h2>1° Semestre</h2>
+    <div class="card" data-codigo="QIM100" data-prerrequisitos="">Química General I (QIM100)<button class="btn-select">Seleccionar</button></div>
+    <div class="card" data-codigo="MAT1000" data-prerrequisitos="">Pre Cálculo (MAT1000)<button class="btn-select">Seleccionar</button></div>
+    <div class="card" data-codigo="QIF117" data-prerrequisitos="">El Mundo de los Medicamentos (QIF117)<button class="btn-select">Seleccionar</button></div>
+    <div class="card" data-codigo="QIF100B" data-prerrequisitos="">Introducción a las Ciencias Farmacéuticas (QIF100B)<button class="btn-select">Seleccionar</button></div>
+    <div class="card" data-codigo="QIM101L" data-prerrequisitos="">Laboratorio de Química General (QIM101L)<button class="btn-select">Seleccionar</button></div>
+  </div>
+
+  <!-- 2° Semestre -->
+  <div class="semestre" id="semestre-2">
+    <h2>2° Semestre</h2>
+    <div class="card" data-codigo="QIM100B" data-prerrequisitos="QIM100">Química General II (QIM100B)<button class="btn-select">Seleccionar</button></div>
+    <div class="card" data-codigo="MAT1100" data-prerrequisitos="MAT1000">Cálculo I (MAT1100)<button class="btn-select">Seleccionar</button></div>
+    <div class="card" data-codigo="FIS109C" data-prerrequisitos="">Física para Ciencias (FIS109C)<button class="btn-select">Seleccionar</button></div>
+  </div>
+
+  <!-- 3° Semestre -->
+  <div class="semestre" id="semestre-3">
+    <h2>3° Semestre</h2>
+    <div class="card" data-codigo="QIM102B" data-prerrequisitos="QIM100,QIM100B">Química Orgánica I (QIM102B)<button class="btn-select">Seleccionar</button></div>
+    <div class="card" data-codigo="QIF115A" data-prerrequisitos="">Botánica y Farmacognosia (QIF115A)<button class="btn-select">Seleccionar</button></div>
+    <div class="card" data-codigo="EYP2310" data-prerrequisitos="MAT1100">Estadística para Química y Farmacia (EYP2310)<button class="btn-select">Seleccionar</button></div>
+    <div class="card" data-codigo="BIO104C" data-prerrequisitos="">Biología Celular (BIO104C)<button class="btn-select">Seleccionar</button></div>
+  </div>
+
+  <!-- 4° Semestre -->
+  <div class="semestre" id="semestre-4">
+    <h2>4° Semestre</h2>
+    <div class="card" data-codigo="QIM103A" data-prerrequisitos="QIM102B">Química Orgánica II (QIM103A)<button class="btn-select">Seleccionar</button></div>
+    <div class="card" data-codigo="QIM109B" data-prerrequisitos="EYP2310,QIM100B">Química Analítica I (QIM109B)<button class="btn-select">Seleccionar</button></div>
+    <div class="card" data-codigo="BIO135C" data-prerrequisitos="">Fisiología (BIO135C)<button class="btn-select">Seleccionar</button></div>
+  </div>
+
+  <!-- 5° Semestre -->
+  <div class="semestre" id="semestre-5">
+    <h2>5° Semestre</h2>
+    <div class="card" data-codigo="QIM104A" data-prerrequisitos="QIM103A">Laboratorio de Química Orgánica (QIM104A)<button class="btn-select">Seleccionar</button></div>
+    <div class="card" data-codigo="QIM117B" data-prerrequisitos="QIM103A">Bioquímica (QIM117B)<button class="btn-select">Seleccionar</button></div>
+    <div class="card" data-codigo="QIM150" data-prerrequisitos="FIS109C">Química-Física (QIM150)<button class="btn-select">Seleccionar</button></div>
+    <div class="card" data-codigo="QIM111" data-prerrequisitos="QIM109B">Análisis instrumental (QIM111)<button class="btn-select">Seleccionar</button></div>
+  </div>
+
+  <!-- 6° Semestre -->
+  <div class="semestre" id="semestre-6">
+    <h2>6° Semestre</h2>
+    <div class="card" data-codigo="BIO145C" data-prerrequisitos="BIO135C">Microbiología e Inmunología (BIO145C)<button class="btn-select">Seleccionar</button></div>
+    <div class="card" data-codigo="QIF101A" data-prerrequisitos="QIM104A">Farmacoquímica I (QIF101A)<button class="btn-select">Seleccionar</button></div>
+    <div class="card" data-codigo="QIF104A" data-prerrequisitos="QIM150">Farmacocinética y Biofarmacia (QIF104A)<button class="btn-select">Seleccionar</button></div>
+    <div class="card" data-codigo="QIF150" data-prerrequisitos="QIM117B">Farmacología I (QIF150)<button class="btn-select">Seleccionar</button></div>
+  </div>
+
+  <!-- 7° Semestre -->
+  <div class="semestre" id="semestre-7">
+    <h2>7° Semestre</h2>
+    <div class="card" data-codigo="QIF102A" data-prerrequisitos="QIF101A">Farmacoquímica II (QIF102A)<button class="btn-select">Seleccionar</button></div>
+    <div class="card" data-codigo="QIF105A" data-prerrequisitos="QIM111">Tecnología Farmacéutica I (QIF105A)<button class="btn-select">Seleccionar</button></div>
+    <div class="card" data-codigo="QIF116" data-prerrequisitos="QIF150">Farmacología II (QIF116)<button class="btn-select">Seleccionar</button></div>
+    <div class="card" data-codigo="QIF118A" data-prerrequisitos="QIF150">Bioquímica Clínica (QIF118A)<button class="btn-select">Seleccionar</button></div>
+  </div>
+
+  <!-- 8° Semestre -->
+  <div class="semestre" id="semestre-8">
+    <h2>8° Semestre</h2>
+    <div class="card" data-codigo="QIF108" data-prerrequisitos="QIF116">Toxicología (QIF108)<button class="btn-select">Seleccionar</button></div>
+    <div class="card" data-codigo="TESIS" data-prerrequisitos="">Tesis de Grado<button class="btn-select">Seleccionar</button></div>
+  </div>
+
+  <!-- 9° Semestre -->
+  <div class="semestre" id="semestre-9">
+    <h2>9° Semestre</h2>
+    <div class="card" data-codigo="QIF103A" data-prerrequisitos="QIF116">Farmacoquímica III (QIF103A)<button class="btn-select">Seleccionar</button></div>
+    <div class="card" data-codigo="QIF110A" data-prerrequisitos="QIF116">Farmacia Clínica (QIF110A)<button class="btn-select">Seleccionar</button></div>
+    <div class="card" data-codigo="QIF111A" data-prerrequisitos="QIF116">Farmacología III (QIF111A)<button class="btn-select">Seleccionar</button></div>
+    <div class="card" data-codigo="QIF106A" data-prerrequisitos="QIF105A">Tecnología Farmacéutica II (QIF106A)<button class="btn-select">Seleccionar</button></div>
+    <div class="card" data-codigo="OPT1" data-prerrequisitos="">Optativo de Profundización / Práctica Profesional I<button class="btn-select">Seleccionar</button></div>
+  </div>
+
+  <!-- 10° Semestre -->
+  <div class="semestre" id="semestre-10">
+    <h2>10° Semestre</h2>
+    <div class="card" data-codigo="MEB231Q" data-prerrequisitos="QIF150">Salud Pública para Química y Farmacia (MEB231Q)<button class="btn-select">Seleccionar</button></div>
+    <div class="card" data-codigo="QIF109A" data-prerrequisitos="QIF116">Farmacia Privada (QIF109A)<button class="btn-select">Seleccionar</button></div>
+    <div class="card" data-codigo="QIF107" data-prerrequisitos="QIF150">Legislación y Deontología Farmacéutica (QIF107)<button class="btn-select">Seleccionar</button></div>
+    <div class="card" data-codigo="OPT2" data-prerrequisitos="">Optativo de Profundización II<button class="btn-select">Seleccionar</button></div>
+    <div class="card" data-codigo="OPT3" data-prerrequisitos="">Optativo de Profundización III / Práctica Profesional II<button class="btn-select">Seleccionar</button></div>
+  </div>
+
 </div>
 
-<!-- 2 Semestre -->
-<div class="semestre">
-<h2>2° Semestre</h2>
-<table>
-<tr><th>Asignatura</th><th>Código</th><th>Prerrequisitos</th></tr>
-<tr><td>General 2</td><td>QIM100B</td><td>QIM100</td></tr>
-<tr><td>Cálculo 1</td><td>MAT1100</td><td>MAT1000</td></tr>
-<tr><td>Física para Ciencias</td><td>FIS109C</td><td>—</td></tr>
-</table>
-</div>
-
-<!-- 3 Semestre -->
-<div class="semestre">
-<h2>3° Semestre</h2>
-<table>
-<tr><th>Asignatura</th><th>Código</th><th>Prerrequisitos</th></tr>
-<tr><td>Orgánica 1</td><td>QIM102B</td><td>QIM100 o QIM100B</td></tr>
-<tr><td>Botánica</td><td>QIF115A</td><td>—</td></tr>
-<tr><td>Estadística</td><td>EYP2310</td><td>MAT1100</td></tr>
-<tr><td>Biología</td><td>BIO104C</td><td>—</td></tr>
-</table>
-</div>
-
-<!-- 4 Semestre -->
-<div class="semestre">
-<h2>4° Semestre</h2>
-<table>
-<tr><th>Asignatura</th><th>Código</th><th>Prerrequisitos</th></tr>
-<tr><td>Orgánica 2</td><td>QIM103A</td><td>QIM102B</td></tr>
-<tr><td>Analítica 1</td><td>QIM109B</td><td>EYP2310 y QIM100B</td></tr>
-<tr><td>Fisiología</td><td>BIO135C</td><td>—</td></tr>
-</table>
-</div>
-
-<!-- 5 Semestre -->
-<div class="semestre">
-<h2>5° Semestre</h2>
-<table>
-<tr><th>Asignatura</th><th>Código</th><th>Prerrequisitos</th></tr>
-<tr><td>Laboratorio Orgánica</td><td>QIM104A</td><td>QIM103A</td></tr>
-<tr><td>Bioquímica</td><td>QIM117B</td><td>QIM103A</td></tr>
-<tr><td>Química Física</td><td>QIM150</td><td>FIS109C</td></tr>
-<tr><td>Análisis Instrumental</td><td>QIM111</td><td>QIM109B</td></tr>
-</table>
-</div>
-
-<!-- 6 Semestre -->
-<div class="semestre">
-<h2>6° Semestre</h2>
-<table>
-<tr><th>Asignatura</th><th>Código</th><th>Prerrequisitos</th></tr>
-<tr><td>Microbiología</td><td>BIO145C</td><td>BIO135C</td></tr>
-<tr><td>Farmacoquímica 1</td><td>QIF101A</td><td>QIM104A</td></tr>
-<tr><td>Fármacocinética y Biofarmacia</td><td>QIF104A</td><td>QIM150</td></tr>
-<tr><td>Farmacología 1</td><td>QIF150</td><td>QIM117B</td></tr>
-</table>
-</div>
-
-<!-- 7 Semestre -->
-<div class="semestre">
-<h2>7° Semestre</h2>
-<table>
-<tr><th>Asignatura</th><th>Código</th><th>Prerrequisitos</th></tr>
-<tr><td>Farmacoquímica 2</td><td>QIF102A</td><td>QIF101A</td></tr>
-<tr><td>Tecnología Farmacéutica 1</td><td>QIF105A</td><td>QIM111</td></tr>
-<tr><td>Farmacología 2</td><td>QIF116</td><td>QIF150</td></tr>
-<tr><td>Bioquímica Clínica</td><td>QIF118A</td><td>QIF150</td></tr>
-</table>
-</div>
-
-<!-- 8 Semestre -->
-<div class="semestre">
-<h2>8° Semestre</h2>
-<table>
-<tr><th>Asignatura</th><th>Código</th><th>Prerrequisitos</th></tr>
-<tr><td>Toxicología</td><td>QIF108</td><td>QIF116</td></tr>
-</table>
-</div>
-
-<!-- 9 Semestre -->
-<div class="semestre">
-<h2>9° Semestre</h2>
-<table>
-<tr><th>Asignatura</th><th>Código</th><th>Prerrequisitos</th></tr>
-<tr><td>Farmacoquímica 3</td><td>QIF103A</td><td>QIF116</td></tr>
-<tr><td>Farmacia Clínica</td><td>QIF110A</td><td>QIF116</td></tr>
-<tr><td>Farmacología 3</td><td>QIF111A</td><td>QIF116</td></tr>
-<tr><td>Tecnología Farmacéutica 2</td><td>QIF106A</td><td>QIF105A</td></tr>
-</table>
-</div>
-
-<!-- 10 Semestre -->
-<div class="semestre">
-<h2>10° Semestre</h2>
-<table>
-<tr><th>Asignatura</th><th>Código</th><th>Prerrequisitos</th></tr>
-<tr><td>Salud Pública para Farmacia</td><td>MEB231Q</td><td>QIF150</td></tr>
-<tr><td>Farmacia Privada</td><td>QIF109A</td><td>QIF116</td></tr>
-<tr><td>Legislación y Deontología Farmacéutica</td><td>QIF107</td><td>QIF150</td></tr>
-</table>
-</div>
-
+<script src="script.js"></script>
 </body>
 </html>
